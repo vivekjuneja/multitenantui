@@ -1,0 +1,34 @@
+#cart-cl2{
+	box-shadow : 5px 4px 4px #B3B3B3;   
+	border-radius: 15px;
+	background-color: #eee;
+	width:740px;
+	padding: 10px;
+	
+}
+
+.singleProductContainer{
+	padding: 10px;
+	height: 200px;
+	width:720px;
+	
+}
+
+.imageContainer{
+	width:220px;
+	height:200px;
+	float:left;
+}
+.productDetailsContainer{
+	width:280px;
+	float:left;
+	
+}
+.productDetailsContainer span{
+	text-decoration: underline;
+	
+}
+.pricingDetails{
+	width:220px;
+	float:right;
+}

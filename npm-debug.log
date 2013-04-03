@@ -1,0 +1,54 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-u',
+1 verbose cli   'http://registry.npmjs.org/testacular' ]
+2 info using npm@1.1.69
+3 info using node@v0.8.16
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose read json E:\Projects\2013\GSShop_POC\User_Interface\POC\shoplistdemo1\package.json
+6 verbose read json E:\Projects\2013\GSShop_POC\User_Interface\POC\shoplistdemo1\package.json
+7 verbose cache add [ 'http://registry.npmjs.org/testacular', null ]
+8 silly cache add name=undefined spec="http://registry.npmjs.org/testacular" args=["http://registry.npmjs.org/testacular",null]
+9 verbose parsed url { protocol: 'http:',
+9 verbose parsed url   slashes: true,
+9 verbose parsed url   host: 'registry.npmjs.org',
+9 verbose parsed url   hostname: 'registry.npmjs.org',
+9 verbose parsed url   href: 'http://registry.npmjs.org/testacular',
+9 verbose parsed url   pathname: '/testacular',
+9 verbose parsed url   path: '/testacular' }
+10 silly lockFile f50a707a-tp-registry-npmjs-org-testacular http://registry.npmjs.org/testacular
+11 verbose lock http://registry.npmjs.org/testacular C:\Users\invjuneja\AppData\Roaming\npm-cache\f50a707a-tp-registry-npmjs-org-testacular.lock
+12 verbose addRemoteTarball [ 'http://registry.npmjs.org/testacular', null ]
+13 info retry fetch attempt 1 at 14:38:38
+14 verbose fetch to= C:\Users\INVJUN~1\AppData\Local\Temp\npm-7832\1360055318866-0.630158280255273\tmp.tgz
+15 http GET http://registry.npmjs.org/testacular
+16 error fetch failed http://registry.npmjs.org/testacular
+17 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+18 info retry fetch attempt 2 at 14:39:10
+19 verbose fetch to= C:\Users\INVJUN~1\AppData\Local\Temp\npm-7832\1360055318866-0.630158280255273\tmp.tgz
+20 http GET http://registry.npmjs.org/testacular
+21 error fetch failed http://registry.npmjs.org/testacular
+22 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+23 info retry fetch attempt 3 at 14:40:32
+24 verbose fetch to= C:\Users\INVJUN~1\AppData\Local\Temp\npm-7832\1360055318866-0.630158280255273\tmp.tgz
+25 http GET http://registry.npmjs.org/testacular
+26 error fetch failed http://registry.npmjs.org/testacular
+27 silly lockFile f50a707a-tp-registry-npmjs-org-testacular http://registry.npmjs.org/testacular
+28 error Error: connect ETIMEDOUT
+28 error     at errnoException (net.js:770:11)
+28 error     at Object.afterConnect [as oncomplete] (net.js:761:19)
+29 error If you need help, you may report this log at:
+29 error     <http://github.com/isaacs/npm/issues>
+29 error or email it to:
+29 error     <npm-@googlegroups.com>
+30 error System Windows_NT 6.1.7600
+31 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-u" "http://registry.npmjs.org/testacular"
+32 error cwd E:\Projects\2013\GSShop_POC\User_Interface\POC\shoplistdemo1
+33 error node -v v0.8.16
+34 error npm -v 1.1.69
+35 error syscall connect
+36 error code ETIMEDOUT
+37 error errno ETIMEDOUT
+38 verbose exit [ 1, true ]

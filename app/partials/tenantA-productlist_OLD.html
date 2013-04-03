@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div id="header" class="row-fluid" style="border-width:1;border-style:dotted">
+   <div id="logo"  style="float:left;width:20%"> 
+   
+
+     <i>{{tenantName}}----</i>
+   </div>
+    <div class="span2" style="float:left;width:70%">
+      <!--Sidebar content-->
+     <div id="searchbar" style="float:right;width:300px">
+      Search:  <input type="text" ng-model="query">
+	  
+	  </div>
+      <!--<div id="sortby"  style="float:right;width:300px">
+	  Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select>
+	  
+	</div>-->
+	 
+    </div>
+   
+  </div>
+  <div id="contentcolumn" style="border-width:0;border-style:dotted">
+  <div id="menuscolumn" style="border-width:1;border-style:dotted;float:left;width:20%">
+  Menus
+  <ul>
+  <li>Books</li>
+  <li>Mobiles</li>
+  </ul>
+  </div>
+   <div id="contentarea" style="border-width:1;border-style:dotted;float:left;width:75%">
+      <!--Body content-->
+
+ <!--     <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+-->
+     	  <ul class="phones">
+		  <li ng-repeat="tenantproduct in tenant.products | filter:query">
+				<a href="">{{tenantproduct.id}}</a>
+				<br />{{tenantproduct.description}} <br />
+			
+				<img ng-src="{{tenantproduct.productImage}}" class="thumb	">
+				
+			</li>
+		  </ul>
+		  </li>
+
+	
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,118 @@
+<link rel="stylesheet" ng-href="css/{{tenantselected}}.css">
+<div id="logo">
+	<h2 id="tenantname"><a href="/app/index.html#/site/{{tenantselected}}/list" style="color:white"> < </a>{{tenantselected}}</h2>
+</div>
+<div class="left-imageContainer">
+	<img ng-src="{{mainImageUrl}}" class="phone">
+</div>
+<div class="right-content">
+		<h1>{{product.name}}</h1>
+		<p>
+			{{product.description}}
+		</p>
+		<ul class="specs" >
+			<li>
+				<span>Battery</span>
+				<dl>
+					<dt>
+						Type
+					</dt>
+					<dd>
+						{{product.battery.type}}
+					</dd>
+					<dt>
+						Standby time (max)
+					</dt>
+					<dd>
+						{{product.battery.standbytime}}
+					</dd>
+				</dl>
+			</li>
+			<li>
+				<span>Storage and Memory</span>
+				<dl>
+					<dt>
+						RAM
+					</dt>
+					<dd>
+						{{product.storage.ram}}
+					</dd>
+					<dt>
+						HDD
+					</dt>
+					<dd>
+						{{product.storage.hdd}}
+					</dd>
+				</dl>
+			</li>
+			<li>
+				<span>Operating System</span>
+				<dl>
+					<dt>
+						OS Version
+					</dt>
+					<dd>
+						{{product.os}}
+					</dd>
+				</dl>
+			</li>
+			<li>
+				<span>Size and Weigth</span>
+				<dl>
+					<dt>
+						Dimensions
+					</dt>
+					<dd ng-repeat="dim in product.sizeAndWeight.dimensions">
+						{{dim}}
+					</dd>
+					<dt>
+						Weight
+					</dt>
+					<dd>
+						{{product.sizeAndWeight.weight}}
+					</dd>
+				</dl>
+			</li>
+			<li>
+				<span>Display</span>
+				<dl>
+					<dt>
+						Screen size
+					</dt>
+					<dd>
+						{{product.display.screenSize}}
+					</dd>
+					<dt>
+						Screen resolution
+					</dt>
+					<dd>
+						{{product.display.screenResolution}}
+					</dd>
+				</dl>
+			</li>
+			<li>
+				<span>Hardware</span>
+				<dl>
+					<dt>
+						CPU
+					</dt>
+					<dd>
+						{{product.hardware.cpu}}
+					</dd>
+					<dt>
+						USB
+					</dt>
+					<dd>
+						{{product.hardware.usb}}
+					</dd>
+				</dl>
+			</li>
+		</ul>
+		<div class="div-addtocart productdetailed-A2C" show="addedtocart" >
+			<button name="AddtoCart" class="btn-custom" ng-click="calladdToCart(product.id)" >	Add to Cart	</button>
+			<span class="hideText">Product added to cart</span>
+		</div>
+		<button  class="btn-custom" ng-click="moveToCartPage()"> Shopping Cart</button>
+	</div>
+
+</div>

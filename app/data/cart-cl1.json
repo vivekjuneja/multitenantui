@@ -1,0 +1,22 @@
+{
+"products":[
+		{
+			"id" : 1,
+			"name" : "Computer 1- MacBook Pro",
+			"description" : "13inch with Retina Display",
+			"image" :"img/comp1.png",
+			"cost" : 10000,
+			"discount" : 5,
+			"quantity": 1 
+		},
+		{
+			"id" : 2,
+			"name" : "Computer 2- Lenovo",
+			"description" : "C200/2GB/Windows 7 Home Bascic",
+			"image" :"img/comp2.png",
+			"cost" : 20000,
+			"discount" : 0,
+			"quantity": 1
+		}
+	  ]
+}

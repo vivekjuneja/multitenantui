@@ -1,0 +1,17 @@
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div id="logo"  >
+			<h2 id="tenantname">{{tenantName}}</h2>
+		</div>
+		<!--Sidebar content-->
+		<div class="searchBar">
+			
+				<span>Search: </span>
+				<input type="text" ng-model="$parent.query" class="searchText">
+				<!--<input type="button" class="cart-button btn-custom " value="Cart" onclick="javascript: window.location='#/site/{{tenantName}}/cart/order';" />-->
+				<button ng-click="moveToCartPage()" class="cart-button btn-custom ">Cart</button>
+			
+		</div>
+	</div>
+</div>

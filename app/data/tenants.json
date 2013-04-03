@@ -1,0 +1,34 @@
+[
+    {
+        "age": 0, 
+        "id": "flipkart", 
+        "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+        "name": "Flipkart.com", 
+        "snippet": "This is a sample product from TENANT1 to be listed",
+		"menus" : [
+		{"id": "books", "label":"books", "data":"flipkartbooks"},
+		{"id":"phones", "label":"phones", "data":"flipkartphones"}
+		],
+		"products": [
+		{"id":"flipkartproduct_1", "description":"Flipkart Product 1", "productImage": "img/phones/dell-streak-7.0.jpg"}, 
+		{"id":"flipkartproduct_2", "description":"Flipkart Product 2", "productImage": "img/phones/motorola-xoom-with-wi-fi.1.jpg"}
+		]
+
+    },
+	  {
+        "age": 1, 
+        "id": "amazon", 
+        "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+        "name": "Amazon.com", 
+        "snippet": "This is a sample product from TENANT2 to be listed",
+		"menus" : [
+		{"id": "clothes", "label":"clothes", "data":"amazonclothes"},
+		{"id":"phones", "label":"phones", "data":"amazonphones"}
+		],
+		"products" : [
+		{"id":"amazonproduct_1", "description":"Amazon Product 1","productImage": "img/phones/motorola-xoom-with-wi-fi.0.jpg"}, 
+		{"id":"amazonproduct_2", "description":"Amazon Product 2","productImage": "img/phones/motorola-xoom-with-wi-fi.4.jpg"}
+		]
+
+    }
+]

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="productlisting">
+<head>
+  <meta charset="utf-8">
+  <!-- For SEO -->
+  
+    <meta name="fragment" content="!" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Product Page</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.css">
+ 
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/directives.js"></script>
+
+  <script src="lib/angular/angular-resource.js"></script>
+  
+  <script src="lib/dust-full-0.3.0.min.js"></script>
+  
+  <!-- Loading templates -->
+  <script src="lib/dusttemplates/template1.js"></script>
+    <script src="lib/dusttemplates/menulisting.js"></script>
+   <script src="lib/dusttemplates/themetemplate.js"></script>
+   
+  	<script src="lib/jquery.min.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.1.0.min.js"></script>
+    <script src="assets/select2.js"></script>
+    <script src="assets/ui-select2.js"></script>
+    <script src="assets/plunker.js"></script>
+ 
+    <script src="lib/bootstrap-dropdown.js"></script>
+    <script src="lib/bootstrap-collapse.js"></script>
+    <script src="lib/angular-seo.js"></script>
+
+    <link rel="stylesheet" href="assets/rainbow.css"/>
+    <link rel="stylesheet" href="assets/demo.css"/>
+    <link rel="stylesheet" href="assets/select2.css"/>
+   
+   
+   
+   
+      <script type="text/javascript">
+	 var compiled = dust.compile("{#products}{phonename} {snippet}{~n}{/products}", "productlisting");
+	 dust.loadSource(compiled);
+	  
+
+	</script>
+   
+   
+</head>
+
+
+<body>
+
+    <div ng-view></div>
+    
+
+  
+</body>
+
+
+</html>

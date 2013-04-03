@@ -1,0 +1,106 @@
+{
+        "age": 1, 
+        "id": "amazon", 
+        "name": "Amazon.com", 
+        "snippet": "This is a sample product from TENANT2 to be listed",
+		"menus" : [
+		{"id": "Phones", "label":"Mobile Phones", "data":"amazonphones"}		],
+		"products":[
+		{
+			"id" : "amazonproduct_1",
+			"name" : "HTC Desire C",
+			"description" : "Anroid v4 OS, 5MP Camera, 600MHz Processor, 3.5inch touchscreen",
+			"image" :"img/htc-desire.jpg",
+			"cost" : 10000,
+			"discount" : 5,
+			"quantity": 1 
+		},
+		{
+			"id" : "amazonproduct_2",
+			"name" : "Samsung Galaxy S3",
+			"description" : "Anroid v4 OS, 8MP Primary Camera, Secondary Camera, 4.8inch touchscreen",
+			"image" :"img/samsung-galaxy.jpg",
+			"cost" : 26000,
+			"discount" : 4,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_3",
+			"name" : "Blackberry Torch",
+			"description" : "Blackberry 7 OS, 1.2GHz processor, 3.2inch touchscreen, 5MP Camera, front camera",
+			"image" :"img/blackberry-torch.jpg",
+			"cost" : 13000,
+			"discount" : 3,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_4",
+			"name" : "LG Optimus",
+			"description" : "Anroid v4 OS, 5MP Primary Camera, 1GHz Dual core processor, 4.7inch touchscreen",
+			"image" :"img/lgoptimus.jpg",
+			"cost" : 16000,
+			"discount" : 2,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_5",
+			"name" : "Sony Xperia J",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/sonyxperia.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_6",
+			"name" : "Micromax Super",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/micromaxsuperfone.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_7",
+			"name" : "HTC One Plus",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/htc026.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+			{
+			"id" : "amazonproduct_8",
+			"name" : "Apple iPhone Black",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/appleiphone.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+			{
+			"id" : "amazonproduct_9",
+			"name" : "Blackberry Z10",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/blackberryz10.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+			{
+			"id" : "amazonproduct_10",
+			"name" : "Zync C18- C18 Combo",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/zync-c18.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		}
+		
+	  ],
+	    "listnavigationtemplate" : "partials/tenantB-navigation.html",
+        "listcontenttemplate" : "partials/tenantB-content.html",
+		"shoppingtemplate" : "partials/tenantB-ShoppingCart.html",
+		"productdetailtemplate" : "partials/tenantB-productdetail.html"
+
+}

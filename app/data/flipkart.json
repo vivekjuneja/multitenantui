@@ -1,0 +1,106 @@
+{
+        "age": 0, 
+        "id": "flipkart", 
+        "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+        "name": "Flipkart.com", 
+        "snippet": "This is a sample product from TENANT1 to be listed",
+		"menus" : [
+		{"id": "computers", "label":"Computers", "data":"flipkartcomputers"}
+		],
+		"products":[
+		{
+			"id" : "flipkartproduct_1",
+			"name" : "Apple iBook",
+			"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
+			"image" :"img/apple-laptop.jpg",
+			"cost" : 149,
+			"discount" : 15,
+			"quantity": 1 
+		},
+		{
+			"id" : "flipkartproduct_2",
+			"name" : "Lenovo G585",
+			"description" : "1.8GHZ, 4GB/320GB, Windows 8",
+			"image" :"img/lenovo-laptop.jpg",
+			"cost" : 330,
+			"discount" : 14,
+			"quantity": 1
+		},
+		{
+			"id" : "flipkartproduct_3",
+			"name" : "Dell D600",
+			"description" : "1.6GHZ, 40GB, Windows 8",
+			"image" :"img/dell-laptop.jpg",
+			"cost" : 121,
+			"discount" : 13,
+			"quantity": 1 
+		},
+		{
+			"id" : "flipkartproduct_4",
+			"name" : "Dell Inspirion",
+			"description" : "1.8GHZ, 6GB, 500GB, Windows 8",
+			"image" :"img/dell-inspiron.jpg",
+			"cost" : 121,
+			"discount" : 12,
+			"quantity": 1 
+		},
+		{
+			"id" : "flipkartproduct_5",
+			"name" : "HP 2000",
+			"description" : "1.4GHZ, 2GB, 320GB, Windows 8",
+			"image" :"img/hp-laptop.jpg",
+			"cost" : 380,
+			"discount" : 11,
+			"quantity": 1
+		},
+		{
+			"id" : "flipkartproduct_6",
+			"name" : "Samsung Chrome",
+			"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
+			"image" :"img/samsung-chrome.jpg",
+			"cost" : 149,
+			"discount" : 10,
+			"quantity": 1 
+		},
+		{
+			"id" : "flipkartproduct_7",
+			"name" : "Acer C7",
+			"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
+			"image" :"img/Acer-c7.jpg",
+			"cost" : 149,
+			"discount" : 9,
+			"quantity": 1 
+		},
+		{
+			"id" : "flipkartproduct_8",
+			"name" : "WoIVoI Laptop",
+			"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
+			"image" :"img/WoIVoI.jpg",
+			"cost" : 149,
+			"discount" : 8,
+			"quantity": 1 
+		},
+		{
+			"id" : "flipkartproduct_9",
+			"name" : "Asus",
+			"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
+			"image" :"img/Asus.jpg",
+			"cost" : 149,
+			"discount" : 7,
+			"quantity": 1 
+		},
+		{
+			"id" : "flipkartproduct_10",
+			"name" : "Toshibha",
+			"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
+			"image" :"img/Toshibha.jpg",
+			"cost" : 149,
+			"discount" : 6,
+			"quantity": 1 
+		}
+	],
+     	"listnavigationtemplate" : "partials/tenantA-navigation.html",
+        "listcontenttemplate" : "partials/tenantA-content.html",	
+		"shoppingtemplate" : "partials/tenantA-ShoppingCart.html",
+		"productdetailtemplate" : "partials/tenantA-productdetail.html"
+    }
