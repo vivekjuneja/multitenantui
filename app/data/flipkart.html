@@ -1,0 +1,202 @@
+<script type="text/javascript">
+var dataToRender= {
+        "age": 1, 
+        "id": "amazon", 
+        "name": "Amazon.com", 
+        "snippet": "This is a sample product from TENANT2 to be listed",
+		"menus" : [
+		{"id": "Phones", "label":"Mobile Phones", "data":"amazonphones"}		],
+		"products":[
+		{
+			"id" : "amazonproduct_1",
+			"name" : "HTC Desire C",
+			"description" : "Anroid v4 OS, 5MP Camera, 600MHz Processor, 3.5inch touchscreen",
+			"image" :"img/htc-desire.jpg",
+			"cost" : 10000,
+			"discount" : 5,
+			"quantity": 1 
+		},
+		{
+			"id" : "amazonproduct_2",
+			"name" : "Samsung Galaxy S3",
+			"description" : "Anroid v4 OS, 8MP Primary Camera, Secondary Camera, 4.8inch touchscreen",
+			"image" :"img/samsung-galaxy.jpg",
+			"cost" : 26000,
+			"discount" : 4,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_3",
+			"name" : "Blackberry Torch",
+			"description" : "Blackberry 7 OS, 1.2GHz processor, 3.2inch touchscreen, 5MP Camera, front camera",
+			"image" :"img/blackberry-torch.jpg",
+			"cost" : 13000,
+			"discount" : 3,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_4",
+			"name" : "LG Optimus",
+			"description" : "Anroid v4 OS, 5MP Primary Camera, 1GHz Dual core processor, 4.7inch touchscreen",
+			"image" :"img/lgoptimus.jpg",
+			"cost" : 16000,
+			"discount" : 2,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_5",
+			"name" : "Sony Xperia J",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/sonyxperia.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_6",
+			"name" : "Micromax Super",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/micromaxsuperfone.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+		{
+			"id" : "amazonproduct_7",
+			"name" : "HTC One Plus",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/htc026.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+			{
+			"id" : "amazonproduct_8",
+			"name" : "Apple iPhone Black",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/appleiphone.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+			{
+			"id" : "amazonproduct_9",
+			"name" : "Blackberry Z10",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/blackberryz10.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		},
+			{
+			"id" : "amazonproduct_10",
+			"name" : "Zync C18- C18 Combo",
+			"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
+			"image" :"img/zync-c18.jpg",
+			"cost" : 15000,
+			"discount" : 1,
+			"quantity": 1
+		}
+		
+	  ],
+	    "listnavigationtemplate" : "partials/tenantB-navigation.html",
+        "listcontenttemplate" : "partials/tenantB-content.html",
+		"shoppingtemplate" : "partials/tenantB-ShoppingCart.html",
+		"productdetailtemplate" : "partials/tenantB-productdetail.html"
+
+};
+
+</script>
+
+<!-- Navigation Bar Part of the Tenant UI Template -->
+<div class="navbar">
+  <div class="navbar-inner">
+
+  	 <div class="container">
+
+  	   <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    
+
+  
+      </a>
+<form class="navbar-form pull-right form-right ">
+      <button type="submit" class="btn btn-primary" ng-click="moveToCartPage()" >Cart<span data-ng-bind="$parent.cartnum"></span></button>
+  </form> 
+  
+
+      
+    <a class="brand" href="#/site/{{tenantName}}/list">{{tenantName}}</a>
+
+
+   <div class="nav-collapse collapse">
+    <ul class="nav">
+      <li class="active"><a href="#/site/{{tenantName}}/list">Home</a></li>
+     <li class="dropdown">
+    	<a href="#/site/{{tenantName}}/list" class="dropdown-toggle" data-toggle="dropdown">
+      		Categories
+      	    <b class="caret"></b>
+    	</a>
+    
+    <ul class="dropdown-menu">
+		 <li ng-repeat="menu in tenant.menus">
+					<a href="#/site/{{tenantName}}/list">{{menu.label}}</a>
+		</li>
+    </ul>
+  </li>
+     
+      <li><a href="#/site/{{tenantName}}/list">Help</a></li>
+      <li>
+ <form class="navbar-search pull-left ">
+  <input type="text" class="search-query input-xxlarge search-width" placeholder="Search" ng-model="$parent.query">
+</form>
+
+
+ 	</li>
+    </ul>
+</div>
+  
+  
+  </div>
+</div>
+
+
+
+</div>
+
+<!-- End of the Navigation Bar Part of the Tenant UI Template -->
+<!--Begins : Content of tenantA-->
+<div>
+	<div id="contentcolumn"  ng-controller="PhoneListCtrl" >
+		<div id="contentarea" >
+			<!--Body content-->
+
+			<ul class="productlist" >
+				<li ng-repeat="tenantproduct in tenant.products | filter:$parent.query"  >
+
+					<a href="/app/index.html#/site/{{tenantselected}}/products/{{tenantproduct.id}}"> 
+							<img ng-src="{{tenantproduct.image}}" class="thumb" />
+					</a>
+					<div  class="productInfo">
+						<a href="/app/index.html#/site/{{tenantselected}}/products/{{tenantproduct.id}}"> 
+							<span> [{{tenantproduct.name}}]</span> 
+						</a>
+						<p>{{tenantproduct.description}}</p>
+						<p class="amount old">{{tenantproduct.cost}}</p>
+						<p class="discountAmount">
+							{{tenantproduct.cost-(tenantproduct.cost*(tenantproduct.discount/100))}}
+						</p>
+						<div class="div-addtocart" show="addedtocart" >
+							<button id={{tenantproduct.id}}  name="AddtoCart" class="btn-custom"   ng-click="calladdToCart($index)" >Add to Cart</button>
+							<span class="hideText">Product added to cart</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Ens Content of tenant A>

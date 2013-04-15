@@ -1,0 +1,28 @@
+<div id="contentcolumn"  ng-controller="PhoneListCtrl" class="container-fluid" >
+		<!-- End of Tenant specific Menus -->
+		<div id="contentarea" >
+			<!--Body content-->
+			<ul  class="productlist2" ng-repeat="tenant in tenant.categories" ng-class-odd="'odd'" ng-class-even="'even'" >
+				<li ng-repeat="tenantproduct in tenant.products | filter:$parent.query">
+					<div class="productimage">
+						<a ng-href="/app/index.html#/site/{{tenantselected}}/products/{{tenantproduct.id}}">
+							<img ng-src="{{tenantproduct.image}}" class="thumb">
+						</a>
+					</div>
+					<div class="productinfo">
+						<div class="text-productinfo">
+							<a ng-href="/app/index.html#/site/{{tenantselected}}/products/{{tenantproduct.id}}"  >{{tenantproduct.name}}</a>
+							<p>
+								{{tenantproduct.description}}
+							</p>
+						</div>
+						<span class="amount"><b>Price:  {{tenantproduct.cost}}</b></span>
+						<div show="addedtocart" >
+							<button id={{tenantproduct.id}} name="AddtoCart" class="btn-custom"  ng-click="calladdToCart($index)" >Add to Cart</button>
+							<span  class="hideText">Product added to cart</span>
+						</div> 
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>

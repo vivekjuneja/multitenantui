@@ -16,10 +16,34 @@ function PhoneListThemeCtrl($scope, $routeParams, Tenant) {
 function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location) {
 	/* Load all tenants */
 	$scope.tenantselected = $routeParams.tenant;
+
+	if($scope.tenantselected=="ditto") {
+		
+
+		//alert($routeParams["category"]);
+		
+		if($routeParams["category"]=="Electronics")
+		{
+			$scope.category="laptop";
+		}
+		else if($routeParams["category"]=="Mobiles")
+		{
+	
+			$scope.category="mobile";
+		}
+		else
+		{
+			$scope.category="!";
+		}
+		//alert($routeParams["category"]);
+
+	}
 	//alert($scope.tenantselected);
 	$scope.tenant = Tenant.get({ tenant:$routeParams.tenant}); 
+	//----?
+	//console.log($scope.tenant )
     var tenantId = $scope.tenantselected;
-   
+  
    //Render Tenant Name
 	dust.render("test", {name: $routeParams.tenant}, function(err, out) {
 			$scope.tenantName = out;
@@ -40,7 +64,22 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 	$scope.moveToCartPage = function(){
 		$location.path("/site/"+$routeParams.tenant+"/cart/order");
 	}
-
+	$scope.displayMobiles=true;
+	$scope.loadCategoryProducts=function(menuIndex){
+		//console.log("index"+menuIndex);
+		//console.log("category type----"+$scope.tenant.menus[menuIndex].label);
+		var categoryType=$scope.tenant.menus[menuIndex].label;
+		//console.log( $scope.tenant.categories.length);
+		for(var i=0;i<$scope.tenant.categories.length; i++)	{
+	   		
+	   		if(categoryType==$scope.tenant.categories[i].categoryType){
+	   			console.log($scope.tenant.categories[i].categoryType);
+	   			$scope.products=$scope.tenant.categories[i].products;
+	   			console.log($scope.products);
+	   		}
+		}
+		
+	}
 
 }
 
@@ -168,3 +207,6 @@ function shoppingCartStart($scope, $location, $http, addToCartService){
 PhoneListCtrl.$inject=['$scope','$routeParams','Tenant','addToCartService','$location'];
 shoppingCartStart.$inject=['$scope','$location', '$http','addToCartService'];
 PhoneDetailCtrl.$inject=['$scope', '$routeParams', 'Product', 'Tenant','addToCartService', '$location'];
+
+
+

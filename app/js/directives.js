@@ -38,6 +38,38 @@ angular.module('showText',[])
        		}
        	}
       });
+       
+angular.module('showMobiles',[])
+       .directive('showM',function(){
+       	return {
        		
+       		//console.log("Scope---"+scope.$eval(attr.show));
+       		link: function(scope, element,attr){
+       			console.log(element.parent().parent().children()[2]);
+       			var productlistMobiles= angular.element(element.parent().parent().children()[2]);
+       			//var spanElement=angular.element(element.children()[1]);
+                          
+       			element.bind('click',function(){
+	       			//spanElement.removeClass('hideText');
+	       			//spanElement.addClass('showText');
+	       			console.log("clicked")
+	       			productlistMobiles.attr("visibility","visible");
+	       			
+	       			
+	       			
+	       		});	
+       		}
+       	}
+      });
+      
+      
+angular.module('preventDefaultHref',[])
+       .directive('preventDefaultHref', function() {
+    	return function(scope, element, attrs) {
+        	$(element).click(function(event) {
+            	event.preventDefault();
+        	});
+    	}
+});  		
        			
        	

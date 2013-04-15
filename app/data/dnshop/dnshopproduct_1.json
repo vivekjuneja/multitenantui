@@ -1,0 +1,54 @@
+{
+    "additionalFeatures": "Front Facing 1.3MP Camera", 
+     "os": "iOS 6",
+    "battery": {
+      
+        "type": "Lithium Ion (Li-Ion) (7000 mAH)",
+		"standbytime" : "24 hours"
+		
+    }, 
+    "camera": {
+        "features": [
+            "Flash", 
+            "Video"
+        ], 
+        "primary": "5.0 megapixels"
+    }, 
+    "connectivity": {
+        "bluetooth": "Bluetooth 2.1", 
+        "cell": "T-mobile HSPA+ @ 2100/1900/AWS/850 MHz", 
+        "gps": true, 
+        "infrared": false, 
+        "wifi": "802.11 b/g"
+    }, 
+    "description": "DNShop.com HTC Desire C is the best in class computer for your professional and personal work.", 
+    "display": {
+        "screenResolution": "WVGA (1280 x 968)", 
+        "screenSize": "4.0 inches"
+    }, 
+    "hardware": {
+        "accelerometer": true, 
+        "audioJack": "3.5mm", 
+        "cpu": "Apple A6 Processor", 
+        "fmRadio": false, 
+        "physicalKeyboard": false, 
+        "usb": "USB 3.0"
+    }, 
+    "id": "dnshopproduct_1", 
+    "images": [
+        "img/dnshop/htc-desire.jpg"
+    ], 
+    "name": "DNShop.com : HTC Desire C", 
+    "sizeAndWeight": {
+        "dimensions": [
+            "300 mm (w)", 
+            "300 mm (h)", 
+            "12.4 mm (d)"
+        ], 
+        "weight": "1250.0 grams"
+    }, 
+    "storage": {
+        "hdd": "750GB", 
+        "ram": "8GB"
+    }
+}

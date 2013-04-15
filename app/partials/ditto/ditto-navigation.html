@@ -1,0 +1,22 @@
+<header>
+	<nav>
+		<div id="logo"><strong>{{tenantName}}</strong></div>
+		
+		<div class="pull-right">
+			 <ul>
+			 	<li><form id="search" >
+			 		<input type="text" ng-model="$parent.query" class="search-input">
+			 		<span class="icon-search"></span>
+			 		</form></li>
+				<li><a href="#">Category</a>
+					<ul class="sub-menu">
+						<li ng-repeat="menu in tenant.menus">
+						<a href="#/site/{{tenantName}}/list?category={{menu.label}}" >{{menu.label}}</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href='#/site/{{tenantName}}/cart/order '>My Cart <span class="iconCart icon-shopping-cart"></span></a></li>
+			 </ul>
+		 </div>
+	</nav>
+</header>
