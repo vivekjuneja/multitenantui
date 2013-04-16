@@ -1,8 +1,8 @@
 {
         "age": 0, 
-        "id": "gsshop", 
+        "id": "ditto", 
         "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
-        "name": "Gsshop.com", 
+        "name": "Dnshop.com", 
         "snippet": "This is a sample product from TENANT1 to be listed",
 		"menus" : [
 		   {"id": "0", "label":"Computers", "data":"gsshopcomputers"},
@@ -11,10 +11,9 @@
 		"categories":[
 			{
 			   "categoryId": 1,
-			   "categoryType":"Computers",
+			   "categoryType":"computers",
 			   "products":[
 			   		{
-			   			"type": "laptop",
 						"id" : "gsshopproduct_1",
 						"name" : "Apple iBook",
 						"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
@@ -24,7 +23,6 @@
 						"quantity": 1 
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_2",
 						"name" : "Lenovo G585",
 						"description" : "1.8GHZ, 4GB/320GB, Windows 8",
@@ -34,7 +32,6 @@
 						"quantity": 1
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_3",
 						"name" : "Dell D600",
 						"description" : "1.6GHZ, 40GB, Windows 8",
@@ -44,7 +41,6 @@
 						"quantity": 1 
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_4",
 						"name" : "Dell Inspirion",
 						"description" : "1.8GHZ, 6GB, 500GB, Windows 8",
@@ -54,7 +50,6 @@
 						"quantity": 1 
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_5",
 						"name" : "HP 2000",
 						"description" : "1.4GHZ, 2GB, 320GB, Windows 8",
@@ -64,7 +59,6 @@
 						"quantity": 1
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_6",
 						"name" : "Samsung Chrome",
 						"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
@@ -74,7 +68,6 @@
 						"quantity": 1 
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_7",
 						"name" : "Acer C7",
 						"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
@@ -84,7 +77,6 @@
 						"quantity": 1 
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_8",
 						"name" : "WoIVoI Laptop",
 						"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
@@ -94,7 +86,6 @@
 						"quantity": 1 
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_9",
 						"name" : "Asus",
 						"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
@@ -104,7 +95,6 @@
 						"quantity": 1 
 					},
 					{
-						"type": "laptop",
 						"id" : "gsshopproduct_10",
 						"name" : "Toshibha",
 						"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
@@ -120,7 +110,6 @@
 			   "categoryType":"Mobiles",
 			   "products":[
 			   		{
-						"type": "mobile",
 						"id" : "gsshopproduct_1",
 						"name" : "HTC Desire C",
 						"description" : "Anroid v4 OS, 5MP Camera, 600MHz Processor, 3.5inch touchscreen",
@@ -130,7 +119,6 @@
 						"quantity": 1 
 					},
 					{
-						"type": "mobile",
 						"id" : "gsshopproduct_2",
 						"name" : "Samsung Galaxy S3",
 						"description" : "Anroid v4 OS, 8MP Primary Camera, Secondary Camera, 4.8inch touchscreen",
@@ -140,7 +128,6 @@
 						"quantity": 1
 					},
 					{
-						"type": "mobile",
 						"id" : "gsshopproduct_3",
 						"name" : "Blackberry Torch",
 						"description" : "Blackberry 7 OS, 1.2GHz processor, 3.2inch touchscreen, 5MP Camera, front camera",
@@ -150,7 +137,6 @@
 						"quantity": 1
 					},
 					{
-						"type": "mobile",
 						"id" : "gsshopproduct_4",
 						"name" : "LG Optimus",
 						"description" : "Anroid v4 OS, 5MP Primary Camera, 1GHz Dual core processor, 4.7inch touchscreen",
@@ -160,7 +146,6 @@
 						"quantity": 1
 					},
 					{
-						"type": "mobile",
 						"id" : "gsshopproduct_5",
 						"name" : "Sony Xperia J",
 						"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
@@ -170,7 +155,6 @@
 						"quantity": 1
 					},
 					{
-						"type": "mobile",
 						"id" : "gsshopproduct_6",
 						"name" : "Micromax Super",
 						"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
@@ -180,7 +164,6 @@
 						"quantity": 1
 					},
 					{
-						"type": "mobile",
 						"id" : "gsshopproduct_7",
 						"name" : "HTC One Plus",
 						"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
@@ -189,8 +172,7 @@
 						"discount" : 1,
 						"quantity": 1
 					},
-					{
-						"type": "mobile",
+						{
 						"id" : "gsshopproduct_8",
 						"name" : "Apple iPhone Black",
 						"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
@@ -199,8 +181,7 @@
 						"discount" : 1,
 						"quantity": 1
 					},
-					{
-						"type": "mobile",
+						{
 						"id" : "gsshopproduct_9",
 						"name" : "Blackberry Z10",
 						"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
@@ -209,8 +190,7 @@
 						"discount" : 1,
 						"quantity": 1
 					},
-					{
-						"type": "mobile",
+						{
 						"id" : "gsshopproduct_10",
 						"name" : "Zync C18- C18 Combo",
 						"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
@@ -222,40 +202,8 @@
 			   ]
 			}
 		],
-		"bestSellerProduct":[
-					{
-						"type": "mobile",
-						"id" : "mobileproduct_10",
-						"name" : "Zync C18- C18 Combo",
-						"description" : "Anroid v4 OS, 5MP Primary Camera,0.3MP Secondary Camera, 4inch touchscreen",
-						"image" :"img/dnshop/zync-c18.jpg",
-						"cost" : 15000,
-						"discount" : 1,
-						"quantity": 1
-					},
-					{
-						"type": "mobile",
-						"id" : "gsshopproduct_2",
-						"name" : "Samsung Galaxy S3",
-						"description" : "Anroid v4 OS, 8MP Primary Camera, Secondary Camera, 4.8inch touchscreen",
-						"image" :"img/dnshop/samsung-galaxy.jpg",
-						"cost" : 26000,
-						"discount" : 4,
-						"quantity": 1
-					},
-					{
-						"type": "laptop",
-						"id" : "gsshopproduct_10",
-						"name" : "Toshibha",
-						"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
-						"image" :"img/gsshop/Toshibha.jpg",
-						"cost" : 149,
-						"discount" : 6,
-						"quantity": 1 
-					}
-		],
-	   	"listnavigationtemplate" : "partials/gsshop/gsshop-navigation.html",
-        "listcontenttemplate" : "partials/gsshop/gsshop-content.html",	
-		"shoppingtemplate" : "partials/gsshop/gsshop-ShoppingCart.html",
-		"productdetailtemplate" : "partials/gsshop/gsshop-productdetail.html"
+	   	"listnavigationtemplate" : "partials/mshop/dnshop-navigation.html",
+        "listcontenttemplate" : "partials/mshop/dnshop-content.html",	
+		"shoppingtemplate" : "partials/mshop/dnshop-ShoppingCart.html",
+		"productdetailtemplate" : "partials/mshop/dnshop-productdetail.html"
     }

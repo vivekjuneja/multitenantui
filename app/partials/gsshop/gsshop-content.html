@@ -8,15 +8,12 @@
 				<ul class="breadcrumb">
 					<li><a>Category</a> </li> 
 					<li><div class="arrow-right"> </div></li>
-					<li><a> {{tenant.categories[0].categoryType}}</a></li>
+					<li><a> {{$parent.categoryText}}</a></li>
 				</ul>				
 			</div>
-			<div>
-				<p>User Story 2:
-				<input type="button" value="click" ng-click="myStyle={visibility:'visible'}" ></p>
 			
-			<ul class="productlist" ng-repeat="tenant in tenant.categories" ng-class-odd="'odd'" ng-class-even="'even'" ng-style="myStyle">
-				<li ng-repeat="tenantproduct in tenant.products | filter:$parent.query"  >
+			<ul class="productlist" ng-repeat="tenant in tenant.categories" >
+				<li ng-repeat="tenantproduct in tenant.products | filter:$parent.category | filter:$parent.query"  >
 
 					<a href="/app/index.html#/site/{{tenantselected}}/products/{{tenantproduct.id}}"> <img ng-src="{{tenantproduct.image}}" class="thumb" /> </a>
 					<div class="productInfo">
@@ -39,7 +36,17 @@
 					</div>
 				</li>
 			</ul>
-		</div>
+			<div class="best-seller">
+				<h4>Best Seller Promotions</h5>
+				<ul class="best-seller-product">
+					<li  ng-repeat="bestSellerProduct in tenant.bestSellerProduct">
+						<a href="/app/index.html#/site/{{tenantselected}}/products/{{tenantproduct.id}}"> 
+						<img ng-src="{{bestSellerProduct.image}}" class="thumb" /> </a>
+						<p><strong>[{{bestSellerProduct.name}}]</strong></p>
+						
+					</li>
+				</ul>
+			</div>		
 		</div>
 	</div>
 </div>

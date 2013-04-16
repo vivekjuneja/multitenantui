@@ -148,3 +148,32 @@ nav li:hover ul.sub-menu{
 	font-weight:bold;
 	padding:.2em
 }
+.banner h4{
+	border-bottom: 2px solid #1179EA;
+	padding: 10px;
+	color: #EE5C42;
+}
+.banner-product li{
+  width:11em;
+  padding-right:2em;
+  padding-bottom: 4em;
+  display:inline-block; 
+  margin-left: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #B9D3EE;
+}
+.banner-product img{
+	width:100%;
+}
+.banner-product p{
+	font-weight:bold;
+	text-align: center;
+}
+.rating{
+	margin:0;
+	color: #0E6BD4;
+}
+.rating span{
+	color:#EE5C42;
+	font-weight: bold;
+}

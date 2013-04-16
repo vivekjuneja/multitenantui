@@ -17,12 +17,14 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 	/* Load all tenants */
 	$scope.tenantselected = $routeParams.tenant;
 
-	if($scope.tenantselected=="ditto") {
+	$scope.categoryText = $routeParams["category"];
+
+	if($scope.tenantselected=="ditto"|| $scope.tenantselected=="gsshop") {
 		
 
 		//alert($routeParams["category"]);
 		
-		if($routeParams["category"]=="Electronics")
+		if($routeParams["category"]=="Electronics" || $routeParams["category"]=="Computers")
 		{
 			$scope.category="laptop";
 		}
@@ -33,7 +35,7 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 		}
 		else
 		{
-			$scope.category="!";
+			$scope.category="Select Category !";
 		}
 		//alert($routeParams["category"]);
 

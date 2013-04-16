@@ -21,7 +21,8 @@
 						"image" :"img/gsshop/apple-laptop.jpg",
 						"cost" : 149,
 						"discount" : 15,
-						"quantity": 1 
+						"quantity": 1 ,
+						"rating": 4
 					},
 					{
 						"type": "laptop",
@@ -31,7 +32,8 @@
 						"image" :"img/gsshop/lenovo-laptop.jpg",
 						"cost" : 330,
 						"discount" : 14,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 2
 					},
 					{
 						"type": "laptop",
@@ -41,7 +43,8 @@
 						"image" :"img/gsshop/dell-laptop.jpg",
 						"cost" : 121,
 						"discount" : 13,
-						"quantity": 1 
+						"quantity": 1,
+						 "rating": 1
 					},
 					{
 						"type" : "laptop",
@@ -51,7 +54,8 @@
 						"image" :"img/gsshop/dell-inspiron.jpg",
 						"cost" : 121,
 						"discount" : 12,
-						"quantity": 1 
+						"quantity": 1,
+						"rating": 5 
 					},
 					{
 						"type" : "laptop",
@@ -61,7 +65,8 @@
 						"image" :"img/gsshop/hp-laptop.jpg",
 						"cost" : 380,
 						"discount" : 11,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 3
 					},
 					{
 						"type" : "laptop",
@@ -71,7 +76,8 @@
 						"image" :"img/gsshop/samsung-chrome.jpg",
 						"cost" : 149,
 						"discount" : 10,
-						"quantity": 1 
+						"quantity": 1,
+						"rating": 2 
 					},
 					{
 						"type" : "laptop",
@@ -81,7 +87,9 @@
 						"image" :"img/gsshop/Acer-c7.jpg",
 						"cost" : 149,
 						"discount" : 9,
-						"quantity": 1 
+						"quantity": 1,
+						"rating": 3
+						 
 					},
 					{
 						"type" : "laptop",
@@ -91,7 +99,8 @@
 						"image" :"img/gsshop/WoIVoI.jpg",
 						"cost" : 149,
 						"discount" : 8,
-						"quantity": 1 
+						"quantity": 1,
+						"rating": 1 
 					},
 					{
 						"type" : "laptop",
@@ -101,7 +110,8 @@
 						"image" :"img/gsshop/Asus.jpg",
 						"cost" : 149,
 						"discount" : 7,
-						"quantity": 1 
+						"quantity": 1,
+						"rating": 4 
 					},
 					{
 						"type" : "laptop",
@@ -111,7 +121,8 @@
 						"image" :"img/gsshop/Toshibha.jpg",
 						"cost" : 149,
 						"discount" : 6,
-						"quantity": 1 
+						"quantity": 1,
+						"rating": 1 
 					}
 			   ]
 			},
@@ -127,7 +138,8 @@
 						"image" :"img/dnshop/htc-desire.jpg",
 						"cost" : 10000,
 						"discount" : 5,
-						"quantity": 1 
+						"quantity": 1,
+						"rating": 5 
 					},
 					{
 						"type" : "mobile",
@@ -137,7 +149,8 @@
 						"image" :"img/dnshop/samsung-galaxy.jpg",
 						"cost" : 26000,
 						"discount" : 4,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 3
 					},
 					{
 						"type" : "mobile",
@@ -147,7 +160,8 @@
 						"image" :"img/dnshop/blackberry-torch.jpg",
 						"cost" : 13000,
 						"discount" : 3,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 2
 					},
 					{
 						"type" : "mobile",
@@ -157,7 +171,8 @@
 						"image" :"img/dnshop/lgoptimus.jpg",
 						"cost" : 16000,
 						"discount" : 2,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 4
 					},
 					{
 						"type" : "mobile",
@@ -167,7 +182,8 @@
 						"image" :"img/dnshop/sonyxperia.jpg",
 						"cost" : 15000,
 						"discount" : 1,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 3
 					},
 					{
 						"type" : "mobile",
@@ -177,7 +193,8 @@
 						"image" :"img/dnshop/micromaxsuperfone.jpg",
 						"cost" : 15000,
 						"discount" : 1,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 1
 					},
 					{
 						"type" : "mobile",
@@ -187,7 +204,8 @@
 						"image" :"img/dnshop/htc026.jpg",
 						"cost" : 15000,
 						"discount" : 1,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 4
 					},
 					{
 						"type" : "mobile",
@@ -197,7 +215,8 @@
 						"image" :"img/dnshop/appleiphone.jpg",
 						"cost" : 15000,
 						"discount" : 1,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 5
 					},
 						{
 							"type" : "mobile",
@@ -207,7 +226,8 @@
 						"image" :"img/dnshop/blackberryz10.jpg",
 						"cost" : 15000,
 						"discount" : 1,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 5
 					},
 						{
 							"type" : "mobile",
@@ -217,10 +237,59 @@
 						"image" :"img/dnshop/zync-c18.jpg",
 						"cost" : 15000,
 						"discount" : 1,
-						"quantity": 1
+						"quantity": 1,
+						"rating": 1
 					}
 			   ]
 			}
+		],
+		"bestSellerProduct":[
+					{
+						"type" : "laptop",
+						"id" : "gsshopproduct_5",
+						"name" : "HP 2000",
+						"description" : "1.4GHZ, 2GB, 320GB, Windows 8",
+						"image" :"img/gsshop/hp-laptop.jpg",
+						"cost" : 380,
+						"discount" : 11,
+						"quantity": 1,
+						"rating": 4
+					},
+					{
+			   			"type" : "mobile",
+						"id" : "gsshopproduct_1",
+						"name" : "HTC Desire C",
+						"description" : "Anroid v4 OS, 5MP Camera, 600MHz Processor, 3.5inch touchscreen",
+						"image" :"img/dnshop/htc-desire.jpg",
+						"cost" : 10000,
+						"discount" : 5,
+						"quantity": 1,
+						"rating": 5 
+					},
+					{
+						"type" : "laptop",
+						"id" : "gsshopproduct_10",
+						"name" : "Toshibha",
+						"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
+						"image" :"img/gsshop/Toshibha.jpg",
+						"cost" : 149,
+						"discount" : 6,
+						"quantity": 1,
+						"rating": 4 
+					}
+		],
+		"newProducts":[
+			        {  
+						"type" : "laptop",
+						"id" : "gsshopproduct_11",
+						"name" : "Kyocera",
+						"description" : "1.4GHZ, 2GB, 320GB, Windows 8",
+						"image" :"img/Kyocera.jpg",
+						"cost" : 3800,
+						"discount" : 11,
+						"quantity": 1,
+						"rating": 3
+					}
 		],
 	   	"listnavigationtemplate" : "partials/ditto/ditto-navigation.html",
         "listcontenttemplate" : "partials/ditto/ditto-content.html",	

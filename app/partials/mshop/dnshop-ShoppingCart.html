@@ -1,0 +1,43 @@
+<link rel="stylesheet" ng-href="css/{{tenantName}}.css">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <!--<div id="logo"><a href="#"><img alt="logo"></a></div>-->
+    <div id="logo">
+		<h2 id="tenantname"><a href="/app/index.html#/site/{{tenantName}}/list" > < </a>{{tenantName}}</h2>	
+	</div>
+  </div>
+  <div class="contentWrapper">
+  	
+  	<h4>{{title}} <span>: {{tenantName}}</span></h4>
+  	
+	  	<div class="cart-tenantB" id="cart-cl2">
+	  		<div class="singleProductContainer" ng-repeat="product in totalProducts.products" >
+	  			<div class="imageContainer">
+	  				<img alt="productImage" ng-src="{{product.image}}">
+	  			</div>
+	  			<div class="productDetailsContainer">
+	  				<h4>{{product.name}}</h4>
+	  				<p>{{product.description}}</p>
+	  				<p><span remove="remove($index)">Delete</span></p>
+	  			</div>
+	  			<div class="pricingDetails">
+	  				<p class="amount">Price: {{product.cost | currency}}</p>
+	  				<p>Quantity: <input type="number" min="1" max="10" size="2" name="quantity" ng-model="product.quantity" required></p>
+	  				<p>Discount: {{product.discount}}</p>
+	  				<p class="amount">Product Cost: {{product.quantity*product.cost | currency}}</p>
+	  			</div>
+	  		</div>
+	  		<div class="cart-cl2-total">
+	  		
+	  			<p><strong>Total number of products : {{totalQuantity()}} </strong></p>
+	  			
+	  			<!--<p>Total cost of the selected products using filter:{{totalProducts | sum | currency}} </p>-->
+	  			<p><strong>Total cost of the selected products : {{totalCost()|currency}}</strong> </p>
+	  		</div>
+	  		
+	  	</div>
+
+  </div>
+</div>
+
+
