@@ -20,33 +20,25 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 	$scope.categoryText = $routeParams["category"];
 
 	if($scope.tenantselected=="ditto"|| $scope.tenantselected=="gsshop") {
-		
-
 		//alert($routeParams["category"]);
-		
 		if($routeParams["category"]=="Electronics" || $routeParams["category"]=="Computers")
 		{
 			$scope.category="laptop";
 		}
 		else if($routeParams["category"]=="Mobiles")
 		{
-	
 			$scope.category="mobile";
 		}
 		else
 		{
-			$scope.category="Select Category !";
+			$scope.category="Select Category!";
 		}
 		//alert($routeParams["category"]);
 
 	}
-	//alert($scope.tenantselected);
 	$scope.tenant = Tenant.get({ tenant:$routeParams.tenant}); 
-	//----?
-	//console.log($scope.tenant )
-    var tenantId = $scope.tenantselected;
-  
-   //Render Tenant Name
+	var tenantId = $scope.tenantselected;
+    //Render Tenant Name
 	dust.render("test", {name: $routeParams.tenant}, function(err, out) {
 			$scope.tenantName = out;
 	});
@@ -66,22 +58,8 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 	$scope.moveToCartPage = function(){
 		$location.path("/site/"+$routeParams.tenant+"/cart/order");
 	}
-	$scope.displayMobiles=true;
-	$scope.loadCategoryProducts=function(menuIndex){
-		//console.log("index"+menuIndex);
-		//console.log("category type----"+$scope.tenant.menus[menuIndex].label);
-		var categoryType=$scope.tenant.menus[menuIndex].label;
-		//console.log( $scope.tenant.categories.length);
-		for(var i=0;i<$scope.tenant.categories.length; i++)	{
-	   		
-	   		if(categoryType==$scope.tenant.categories[i].categoryType){
-	   			console.log($scope.tenant.categories[i].categoryType);
-	   			$scope.products=$scope.tenant.categories[i].products;
-	   			console.log($scope.products);
-	   		}
-		}
-		
-	}
+	
+	
 
 }
 
@@ -162,6 +140,7 @@ function shoppingCartStart($scope, $location, $http, addToCartService){
 				
 		var selectedProductsIndex=addToCartService.productIndex;
 		var jsonP=$scope.totalProducts.products;
+		
 		var AddedP=[];
 		for(var i=0; i < selectedProductsIndex.length; i++){
 			var pindex=selectedProductsIndex[i];

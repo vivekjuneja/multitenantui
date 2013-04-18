@@ -243,7 +243,11 @@
 			   ]
 			}
 		],
-		"bestSellerProduct":[
+		"promotionLists": [
+			{
+				"listid" : 1,
+				"listname" : "Best Seller Products",
+				"products" : [
 					{
 						"type" : "laptop",
 						"id" : "gsshopproduct_5",
@@ -277,8 +281,14 @@
 						"quantity": 1,
 						"rating": 4 
 					}
+				]
+			}
 		],
-		"newProducts":[
+		"newProductLists":[
+			{
+				"listid" : 1,
+				"listname" : "New Products",
+				"products" :[
 			        {  
 						"type" : "laptop",
 						"id" : "gsshopproduct_11",
@@ -290,9 +300,12 @@
 						"quantity": 1,
 						"rating": 3
 					}
+				]
+			}
 		],
 	   	"listnavigationtemplate" : "partials/ditto/ditto-navigation.html",
         "listcontenttemplate" : "partials/ditto/ditto-content.html",	
+         "listpromotiontemplate" : "partials/ditto/ditto-promotion.html",
 		"shoppingtemplate" : "partials/ditto/ditto-ShoppingCart.html",
 		"productdetailtemplate" : "partials/ditto/ditto-productdetail.html"
     }
