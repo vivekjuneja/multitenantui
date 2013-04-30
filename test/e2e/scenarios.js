@@ -1,144 +1,112 @@
-'use strict';
-
-/* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
-
-/*describe('PhoneCat App', function() {
-
-  it('should redirect index.html to index.html#/phones', function() {
-    browser().navigateTo('../../app/index.html');
-    expect(browser().location().url()).toBe('/phones');
-  });
-
-
-  describe('Phone list view', function() {
-
-    beforeEach(function() {
-      browser().navigateTo('../../app/index.html#/phones');
-    });
-
-
-    it('should filter the phone list as user types into the search box', function() {
-      expect(repeater('.phones li').count()).toBe(20);
-
-      input('query').enter('nexus');
-      expect(repeater('.phones li').count()).toBe(1);
-
-      input('query').enter('motorola');
-      expect(repeater('.phones li').count()).toBe(8);
-    });
-
-
-    it('should be possible to control phone order via the drop down select box', function() {
-      input('query').enter('tablet'); //let's narrow the dataset to make the test assertions shorter
-
-      expect(repeater('.phones li', 'Phone List').column('phone.name')).
-          toEqual(["Motorola XOOM\u2122 with Wi-Fi",
-                   "MOTOROLA XOOM\u2122"]);
-
-      select('orderProp').option('Alphabetical');
-
-      expect(repeater('.phones li', 'Phone List').column('phone.name')).
-          toEqual(["MOTOROLA XOOM\u2122",
-                   "Motorola XOOM\u2122 with Wi-Fi"]);
-    });
-
-
-    it('should render phone specific links', function() {
-      input('query').enter('nexus');
-      element('.phones li a').click();
-      expect(browser().location().url()).toBe('/phones/nexus-s');
-    });
-  });
-
-
-  describe('Phone detail view', function() {
-
-    beforeEach(function() {
-      browser().navigateTo('../../app/index.html#/phones/nexus-s');
-    });
-
-
-    it('should display nexus-s page', function() {
-      expect(binding('phone.name')).toBe('Nexus S');
-    });
-
-
-    it('should display the first phone image as the main phone image', function() {
-      expect(element('img.phone').attr('src')).toBe('img/phones/nexus-s.0.jpg');
-    });
-
-
-    it('should swap main image if a thumbnail image is clicked on', function() {
-      element('.phone-thumbs li:nth-child(3) img').click();
-      expect(element('img.phone').attr('src')).toBe('img/phones/nexus-s.2.jpg');
-
-      element('.phone-thumbs li:nth-child(1) img').click();
-      expect(element('img.phone').attr('src')).toBe('img/phones/nexus-s.0.jpg');
-    });
-  });
-});
-
-*/
-
-/*===========e2e test cases for shopping cart=========*/
-describe('Shopping Cart', function() {
-
-  beforeEach(function() {
-    browser().navigateTo('../../app/index.html#/error.html');
-  });
-
-
-  it('should automatically redirect to /error page when location hash/fragment is empty', function() {
+describe('Product Listing for Tenants', function() {
+	beforeEach(function() {
+    	browser().navigateTo('../../app/index.html#/error.html');
+  	});
+   it('should automatically redirect to /error page when location hash/fragment is empty', function() {
     expect(browser().location().url()).toBe("/error.html");
-  });
-  	
-
-  describe('Flipkart', function() {
-
-    beforeEach(function() {
-      browser().navigateTo('#/site/flipkart/cart/order');
+   });
+   
+   describe('Verify whether all tenant pages land perfectly', function() {
+	   	it('should render tenant1:GSShop product listing page when user navigates to the tenant', function() {
+	   	  browser().navigateTo('#/site/gsshop/list');
+	      expect(element('a.brand').text()).toBe("gsshop");
+	    });
+	    it('should render tenant2:Ditto product listing page when user navigates to the tenant', function() {
+	   	  browser().navigateTo('#/site/ditto/list');
+	      expect(element('#logo').text()).toBe("ditto");
+	    });
+	    it('should render tenant3:DNShop product listing page when user navigates to the tenant', function() {
+	   	  browser().navigateTo('#/site/dnshop/list');
+	      expect(element('#logo').text()).toMatch("dnshop");
+	    });
+	    it('should render tenant4:MShop product listing page when user navigates to the tenant', function() {
+	   	  browser().navigateTo('#/site/mshop/list');
+	      expect(element('#mshoplogo').text()).toMatch("mshop");
+	    });
+   });
+   //--- User Story: 1---
+   describe('User Story 1: Get List of Products for a Category', function(){
+    	it('Should display category A (ie Computer) products on Shop A (GSShoop)', function(){
+    		browser().navigateTo('#/site/gsshop/list');
+    		element('.dropdown-toggle').click();
+    		element('.dropdown-menu li:first a').click();
+    		expect(element('.breadcrumb li:last').text()).toMatch("laptop");
+    	});
+    	it('Should display category B (ie Electronic) products on Shop B (Ditto)', function(){
+    		browser().navigateTo('#/site/ditto/list');
+    		expect(element('.sub-menu li:first a').text()).toMatch('Electronics');
+    		element('.sub-menu li:first a').click();
+    		expect(element('.breadcrumb li:last').text()).toMatch("Electronics");
+    	});
     });
-
-   	it('should render tenantA Shopping cart when user navigates to /tenantA', function() {
-      expect(element('[ng-view] h2:first').text()).toBe(" < flipkart");
-    });
-    
-    it('should verify text on tenant A', function() {
-      expect(element('[ng-view] h4:first').text()).toBe("Shopping Cart : flipkart");
-    });
-    
-    it('should verify the unit quantity, total productQuantity and totalCost',function(){
-    	//expect(element('table tr td input').count()).toBe(2);
-    	expect(input('product.quantity').val()).toEqual('1');
-    	expect(element('#totalQ').text()).toEqual(' 5');
-    	expect(element('#totalC').text()).toEqual('$1,101.00');
-         	
-    });
-    it('should accept the quantity from the user and check totalQuantity', function(){
-     	input('product.quantity').enter('2')
-    	expect(input('product.quantity').val()).toEqual('2');
-       	expect(element('tr.productRow td.pc:first').text()).toEqual(" $298.00");
-       	expect(element('#totalQ').text()).toEqual(' 10');
-    });
-	it('should remove the product on clicking remove button',function(){
-		//expect(element('td.removeProduct :first').count()).toBe(1);
-		element('td.removeProduct :first').click()
-		expect(repeater('.productRow').count()).toBe(4);
-	});	
-		    
-
-  });
-
-  describe('Amazon', function(){
-  	  beforeEach(function() {
-        browser().navigateTo('#/site/amazon/cart/order');
-      });
-	  it('should redirect to /cart/amazon when location hash/fragment is /cart/amazon', function() {
-	    browser().navigateTo("#/site/amazon/cart/order");
-	  });
-	  it('should render Amazon Shopping cart when user navigates to /cart/amazon', function() {
-        expect(element('[ng-view] h4:first').text()).toBe("Shopping Cart : amazon");
-      });
-  });
+    //--- User Story: 2---
+ 	describe('User Story 2: Search for products', function(){
+ 		it('Should search for products across all categories on Shop C(DNShop)', function(){
+ 			browser().navigateTo('#/site/dnshop/list');
+ 			input('$parent.query').enter("samsung");
+ 			expect(repeater('.productlist2').count()).toBe(2);
+ 		});
+ 		it('Should search for products across under a specified category on ShopB(Ditto)', function(){
+ 			browser().navigateTo('#/site/ditto/list');
+ 			element('.sub-menu li:first a').click();
+ 			input('$parent.query').enter("samsung");
+ 			expect(repeater('.productlist2 :first').count()).toBe(1);
+ 		});
+ 	});
+ 	//User Story: 3
+ 	describe('User Story 3: Search for products', function(){
+ 		it('Should search for products across all categories on Shop C(DNShop)', function(){
+ 			browser().navigateTo('#/site/dnshop/list');
+ 			input('$parent.query').enter("samsung");
+ 			expect(repeater('.productlist2').count()).toBe(2);
+ 		});
+ 		it('Should search for products across all category on ShopD(Mshop)', function(){
+ 			browser().navigateTo('#/site/mshop/list');
+ 			input('$parent.query').enter("samsung");
+ 			expect(repeater('.productlist2').count()).toBe(2);
+ 		});
+ 	});
+ 	//User Story: 4
+ 	describe('User Story 4: View products under Promotion List', function(){
+ 		it('Should display different products under Best Seller Promotion list for ShopA(GSShop)', function(){
+ 			browser().navigateTo('#/site/gsshop/list');
+ 			expect(element('.best-seller h4').text()).toMatch('Best Seller Products');
+ 			var r = repeater('.best-seller li');
+  			expect(r.count()).toBe(3);
+  			expect(r.column(0)).toMatch(["Zync C18- C18 Combo","Samsung Galaxy S3","Toshibha"]);
+ 				
+ 		});
+ 		it('Should display different products under Best Seller Promotion list for ShopB(Ditto)', function(){
+ 			browser().navigateTo('#/site/ditto/list');
+ 			expect(element('.banner h4').text()).toMatch('Best Seller Products');
+ 			var r = repeater('.banner-product:first li');
+  			expect(r.count()).toBe(3);
+  			expect(r.column(0)).toMatch(["HP 2000","HTC Desire C","Toshibha"]);
+ 		});
+  	});
+ 	//User Story :5
+ 	describe('User Story 5: View Products under Promotion List',function(){
+ 		it('Should display products under Best Seller Promotion list for ShopA(GSShop)', function(){
+ 			browser().navigateTo('#/site/gsshop/list');
+ 			expect(element('.best-seller h4').text()).toMatch('Best Seller Products');
+ 		});
+ 		it('Should display products under New Products and Best Seller Promotion list for ShopB(Ditto)', function(){
+ 			browser().navigateTo('#/site/ditto/list');
+ 			expect(element('.banner:first h4').text()).toMatch('Best Seller Products');
+ 			expect(element('#contentarea .banner h4').text()).toMatch('New Products');
+ 		});
+ 	});
+ 	//User Story :6
+ 	describe('User Story 6: View Product Rating',function(){
+ 		it('Should display product rating for ShopB(Ditto)', function(){
+ 			browser().navigateTo('#/site/ditto/list');
+ 			element('.sub-menu li:first a').click();
+ 			expect(element('.productlist2 li .rating').text()).toMatch("Rating");
+ 		});
+ 		it('Should not display products rating for ShopA(GSShop)', function(){
+ 			browser().navigateTo('#/site/gsshop/list');
+ 			expect(element('.productlist2 li .rating').text()).toMatch("Rating");
+ 		});
+ 	});
 });
 

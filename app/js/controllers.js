@@ -37,6 +37,7 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 
 	}
 	$scope.tenant = Tenant.get({ tenant:$routeParams.tenant}); 
+	//alert($scope.tenant);
 	var tenantId = $scope.tenantselected;
     //Render Tenant Name
 	dust.render("test", {name: $routeParams.tenant}, function(err, out) {
