@@ -12,8 +12,9 @@ files = [
 
 autoWatch = true;
 
-browsers = ["C:\\Program Files\\Mozilla Firefox\\firefox.exe"];
-
+//browsers = ["C:\\Program Files\\Mozilla Firefox\\firefox.exe"];
+//browsers = ["C:\\Users\\inspatta\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe"];
+browsers=["C:\\Program Files\\Internet Explorer\\iexplore.exe"];
 junitReporter = {
   outputFile: 'test_out/unit.xml',
   suite: 'unit'

@@ -40,9 +40,9 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 	//alert($scope.tenant);
 	var tenantId = $scope.tenantselected;
     //Render Tenant Name
-	dust.render("test", {name: $routeParams.tenant}, function(err, out) {
-			$scope.tenantName = out;
-	});
+	//dust.render("test", {name: $routeParams.tenant}, function(err, out) {
+		$scope.tenantName = $routeParams.tenant;
+	//});
 	var self = this;
 	//console.log("PhonelistController :  get the products from service ---"+ addToCartService.productIndex);
 	$scope.calladdToCart=function(productId){
