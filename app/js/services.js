@@ -32,3 +32,23 @@ angular.module('sharedCartService',[])
 	   	}
 	   	return cartDataArray;
 	   })
+/*
+
+angular.module('tenantService', []).factory('Tenant', ['$http',
+function($http) {
+	return {
+		get : function(callback) {
+			var config = {
+				headers : {
+					tenant : 'gsshop.gsplatform.com'
+				}
+			};
+			$http.jsonp("http://ec2-175-41-196-144.ap-northeast-1.compute.amazonaws.com:8080/sel/rest/products?callback=angular.callbacks._0", config).success(function(data) {
+				callback(data);
+				alert(data);
+			});
+		}
+	};
+
+}]);
+*/

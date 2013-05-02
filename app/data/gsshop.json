@@ -222,7 +222,11 @@
 			   ]
 			}
 		],
-		"bestSellerProduct":[
+		"promotionLists": [
+			{
+				"listid" : 1,
+				"listname" : "Best Seller Products",
+				"products" : [
 					{
 						"type": "mobile",
 						"id" : "mobileproduct_10",
@@ -253,9 +257,12 @@
 						"discount" : 6,
 						"quantity": 1 
 					}
+				]
+			}
 		],
 	   	"listnavigationtemplate" : "partials/gsshop/gsshop-navigation.html",
         "listcontenttemplate" : "partials/gsshop/gsshop-content.html",	
+        "listpromotiontemplate" : "partials/gsshop/gsshop-promotion.html",
 		"shoppingtemplate" : "partials/gsshop/gsshop-ShoppingCart.html",
 		"productdetailtemplate" : "partials/gsshop/gsshop-productdetail.html"
     }

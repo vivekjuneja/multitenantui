@@ -1,73 +1,92 @@
 'use strict';
-
 /* jasmine specs for controllers go here */
-describe('PhoneCat controllers', function() {
-
-  beforeEach(function(){
-    this.addMatchers({
-      toEqualData: function(expected) {
-        return angular.equals(this.actual, expected);
-      }
-    });
-  });
-
-
-  beforeEach(module('phonecatServices'));
-
-
-  describe('PhoneListCtrl', function(){
-    var scope, ctrl, $httpBackend;
-
-    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
-      $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('phones/phones.json').
-          respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
-
-      scope = $rootScope.$new();
-      ctrl = $controller(PhoneListCtrl, {$scope: scope});
-    }));
-
-
-    it('should create "phones" model with 2 phones fetched from xhr', function() {
-      expect(scope.phones).toEqual([]);
-      $httpBackend.flush();
-
-      expect(scope.phones).toEqualData(
-          [{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
-    });
-
-
-    it('should set the default value of orderProp model', function() {
-      expect(scope.orderProp).toBe('age');
-    });
-  });
-
-
-  describe('PhoneDetailCtrl', function(){
-    var scope, $httpBackend, ctrl,
-        xyzPhoneData = function() {
-          return {
-            name: 'phone xyz',
-                images: ['image/url1.png', 'image/url2.png']
-          }
-        };
-
-
-    beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
-      $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('phones/xyz.json').respond(xyzPhoneData());
-
-      $routeParams.phoneId = 'xyz';
-      scope = $rootScope.$new();
-      ctrl = $controller(PhoneDetailCtrl, {$scope: scope});
-    }));
-
-
-    it('should fetch phone detail', function() {
-      expect(scope.phone).toEqualData({});
-      $httpBackend.flush();
-
-      expect(scope.phone).toEqualData(xyzPhoneData());
-    });
-  });
+ describe('Unit test: Testing Controllers ', function(){
+ 	 beforeEach(function(){
+	    this.addMatchers({
+	      toEqualData: function(expected) {
+	        return angular.equals(this.actual, expected);
+	      }
+	    });
+	  });
+ 	 beforeEach(module('tenantService'));
+ 	 beforeEach(module('sharedCartService'));
+ 	 
+ 	 describe('PhoneListCtrl', function(){
+		var scope, ctrl, httpMock;
+		var dittoJsonData=function(){
+			return {
+				"age": 0, 
+		        "id": "ditto", 
+		        "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+		        "name": "Ditto.com", 
+		        "snippet": "This is a sample product from TENANT1 to be listed",
+				"menus" : [
+				   {"id": "0", "label":"Electronics", "data":"gsshopcomputers"},
+				   {"id": "1", "label":"Mobiles", "data":"gsshopmobiles"}
+				],
+				"categories":[
+					{
+					   "categoryId": 1,
+					   "categoryType":"Electronics",
+					   "products":[
+					   		{
+					   			"type": "laptop",
+								"id" : "gsshopproduct_1",
+								"name" : "Apple iBook",
+								"description" : "800GHz, 0.26GB/30GB, Apple MacOS",
+								"image" :"img/gsshop/apple-laptop.jpg",
+								"cost" : 149,
+								"discount" : 15,
+								"quantity": 1 ,
+								"rating": 4
+							}
+						]
+					}
+				]
+			}
+		}	
+ 		 
+	    beforeEach(inject(function($httpBackend, $rootScope, $controller, $routeParams) {
+	      httpMock = $httpBackend;
+	      $httpBackend.expectGET('data/ditto.json').respond(dittoJsonData());
+	 	  $routeParams.tenant="ditto";
+	 	
+	      scope = $rootScope.$new();
+	      ctrl = $controller(PhoneListCtrl, {
+	      			$scope: scope
+	      			});
+	     // httpMock.flush();
+	    })); 	
+	     
+	    it('should test the loading of tenant specififc json data',function(){	
+	    	expect(scope.tenant).toEqualData({});
+	    	httpMock.flush();
+	    	expect(scope.tenant).toEqualData(dittoJsonData());
+	    });
+	    
+ 	 });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

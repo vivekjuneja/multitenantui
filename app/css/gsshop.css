@@ -110,8 +110,15 @@ a:hover{
 .even {
   visibility: hidden;
 }
-.best-seller h4{
+.best-seller-product{
+	border-top: 2px solid #8B8D8E;
+	margin-right: 1em;
 	border-bottom: 2px solid #8B8D8E;
+	
+}
+.best-seller h4{
+	margin-left: 1.3em;
+	margin-right: 1em
 }
 .best-seller-product li{
   width:11em;
@@ -121,6 +128,7 @@ a:hover{
   border-right: 1px solid #F2F2F2;
   margin-left: 1em;
   margin-bottom: 1em;
+  margin-right: 1em
 }
 /*CSS for shopping cart*/
 .cart-tenantA{

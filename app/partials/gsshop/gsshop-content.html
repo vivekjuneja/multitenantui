@@ -8,7 +8,7 @@
 				<ul class="breadcrumb">
 					<li><a>Category</a> </li> 
 					<li><div class="arrow-right"> </div></li>
-					<li><a> {{$parent.categoryText}}</a></li>
+					<li><a> {{category}}</a></li>
 				</ul>				
 			</div>
 			
@@ -36,17 +36,7 @@
 					</div>
 				</li>
 			</ul>
-			<div class="best-seller">
-				<h4>Best Seller Promotions</h5>
-				<ul class="best-seller-product">
-					<li  ng-repeat="bestSellerProduct in tenant.bestSellerProduct">
-						<a href="/app/index.html#/site/{{tenantselected}}/products/{{tenantproduct.id}}"> 
-						<img ng-src="{{bestSellerProduct.image}}" class="thumb" /> </a>
-						<p><strong>[{{bestSellerProduct.name}}]</strong></p>
-						
-					</li>
-				</ul>
-			</div>		
+					
 		</div>
 	</div>
 </div>

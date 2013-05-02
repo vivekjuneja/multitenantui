@@ -1,0 +1,13 @@
+<div class="best-seller">
+	<h4>{{tenant.promotionLists[0].listname}}</h5>
+	
+	<ul class="best-seller-product">
+		<li  ng-repeat="bestSellerProduct in tenant.promotionLists[0].products">
+			<a href="/app/index.html#/site/{{tenantselected}}/products/{{tenantproduct.id}}"> <img ng-src="{{bestSellerProduct.image}}" class="thumb" /> </a>
+			<p>
+				<strong>[{{bestSellerProduct.name}}]</strong>
+			</p>
+
+		</li>
+	</ul>
+</div>
