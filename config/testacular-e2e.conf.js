@@ -8,13 +8,15 @@ files = [
 
 autoWatch = false;
 
-browsers = ['Chrome'];
-
-singleRun = true;
+//singleRun = true;
 
 proxies = {
-  '/': 'http://localhost:8000/'
+  '/': 'http://localhost:8001/'
 };
+
+reporters = ['junit'];
+
+browsers = ['PhantomJS'];
 
 junitReporter = {
   outputFile: 'test_out/e2e.xml',

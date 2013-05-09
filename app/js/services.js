@@ -9,6 +9,23 @@ angular.module('tenantService', ['ngResource']).
   });
 });
 
+/*angular.module('tenantService', ['ngResource']).
+    factory('Tenant', function($resource){
+  		var Tenant=$resource('data/:tenant.json',{},{
+  			 		query : {
+  			 					method:'GET',
+  			 					params:{q:""}, 
+  			 					isArray:false
+  			 				  }
+  			});
+  		Tenant.prototype.getProductJsonData = function(shopSelectedQuery , successCb, failCb){
+  			var queryObj = { tenant:shopSelectedQuery };
+  			var queryO = JSON.stringify(queryObj); 
+  			
+  			return Tenant.query({q:queryO}, successCb, failCb ); // refer ng-resource for this
+  		}
+   });
+*/
 
 angular.module('productService', ['ngResource']).
     factory('Product', function($resource){

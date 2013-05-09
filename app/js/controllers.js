@@ -2,8 +2,8 @@
 
 /* Controllers */
 //Renders the Product Listing based on the theme selected
-function PhoneListThemeCtrl($scope, $routeParams, Tenant) {
-	/* Load all tenants */
+/*function PhoneListThemeCtrl($scope, $routeParams, Tenant) {
+	/* Load all tenants *---/
 	$scope.tenantselected = $routeParams.tenant;
 	$scope.tenant = Tenant.get({ tenant:$routeParams.tenant});
       //Render Tenant Name
@@ -12,13 +12,11 @@ function PhoneListThemeCtrl($scope, $routeParams, Tenant) {
 	});
   
 
-}
-function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location) {
+}*/
+function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location,$rootScope,$route) {
 	/* Load all tenants */
 	$scope.tenantselected = $routeParams.tenant;
-
 	$scope.categoryText = $routeParams["category"];
-
 	if($scope.tenantselected=="ditto"|| $scope.tenantselected=="gsshop") {
 		//alert($routeParams["category"]);
 		if($routeParams["category"]=="Electronics" || $routeParams["category"]=="Computers")
@@ -36,14 +34,41 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 		//alert($routeParams["category"]);
 
 	}
-	$scope.tenant = Tenant.get({ tenant:$routeParams.tenant}); 
-	//alert($scope.tenant);
+	
+	//error handling for not proper selection of categories
+	if(Object.keys($routeParams).length > 1){
+	    for( var param in $routeParams){
+	       // console.log("param----"+ param +" : "+$routeParams[param]);
+	        if(param == 'category' && $routeParams[param]=="" ){
+	            //alert("no category selected");
+	            $location.path("/error");
+	        }
+	        else if( param == 'category' &&
+	        		 $routeParams[param] != "Electronics" &&
+	        		 $routeParams[param] != "Computers" &&
+	        		 $routeParams[param] != "Mobiles" ){
+	            //alert("not selected proper cat")
+	             $location.path("/error");
+	        }
+	   	 }
+	}
+
+    
+	//$scope.tenant = Tenant.get({ tenant:$routeParams.tenant}); 
+	$scope.tenant = Tenant.query({tenant:$routeParams.tenant}, function(successData){
+		console.log("Success json request for tenant");
+		return successData;
+	},function(errData){
+		if(errData.status == 404 || errData.status == 403){
+			$location.path("/404");
+		}
+	});
 	var tenantId = $scope.tenantselected;
     //Render Tenant Name
 	//dust.render("test", {name: $routeParams.tenant}, function(err, out) {
 		$scope.tenantName = $routeParams.tenant;
 	//});
-	var self = this;
+	//----------var self = this;
 	//console.log("PhonelistController :  get the products from service ---"+ addToCartService.productIndex);
 	$scope.calladdToCart=function(productId){
 		addToCartService.prepareForIdBroadCast(productId);
@@ -59,12 +84,30 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location)
 	$scope.moveToCartPage = function(){
 		$location.path("/site/"+$routeParams.tenant+"/cart/order");
 	}
-	
-	
-
 }
+//test resolve and routing
 
-var renderMenus = function(jsonReceived) {
+PhoneListCtrl.resolve={
+	tenantSelectedJsonData: function( $q,$route,Tenant ,$timeout){
+		var deferred = $q.defer;
+		var shopSelected= $route.current.params.tenant;
+		//alert(shopSelected);
+		return Tenant.query({ tenant:shopSelected},function(successData){
+		 		console.log("success----"+successData);
+		 		//return successData;
+		 		$timeout(function(){
+		 		return deferred.resolve(successData);
+		 		},2000)
+		 	},function(){
+		 	//alert("Invalid tenant selected ");
+		 		//deferred.reject("No tenant found");
+		 	})
+		 	//return deferred.promise;
+	 		//deferred.resolve(dataJSON);
+		}
+}
+//ends
+/*var renderMenus = function(jsonReceived) {
 	alert("jsonreceived " + jsonReceived);
 	dust.render("menulisting",jsonReceived, function(err, out) {
 				self.menulist = out;
@@ -73,12 +116,10 @@ var renderMenus = function(jsonReceived) {
 		
  	});
 			
-}
-function PhoneDetailCtrl($scope, $routeParams, Product, Tenant, addToCartService, $location) {
+}*/
+function PhoneDetailCtrl($scope, $routeParams, Tenant, addToCartService, $location) {
 	$scope.tenantselected = $routeParams.tenant;
 	$scope.tenant = Tenant.get({ tenant:$routeParams.tenant}); 
-
-
 	if($routeParams.productId==undefined)
 		alert("Wrong Product Code !");
 	$scope.product = Product.get({product: $routeParams.productId, tenant:$routeParams.tenant}, function(product) {
@@ -102,15 +143,9 @@ function PhoneDetailCtrl($scope, $routeParams, Product, Tenant, addToCartService
 		$location.path("/site/"+$routeParams.tenant+"/cart/order");
 	}
 	
-  	
-  	/*console.log("Get the selected products from service --- "+ addToCartService.productIndex);
-  	$scope.$on('messageChangeEvent',function(){
-		console.log("I am from handleIdBroadcast of PhoneDetailCntrl---"+addToCartService.productIndex);
-	});*/
-
 }
 
-function ProductInfoCtrl($scope, $routeParams, Product) {
+/*function ProductInfoCtrl($scope, $routeParams, Product) {
 	if($routeParams.productId==undefined)
 	 alert("Hola");
 	$scope.product = Product.get({product: $routeParams.productId, tenant:$routeParams.tenant}, function(product) {
@@ -121,10 +156,8 @@ function ProductInfoCtrl($scope, $routeParams, Product) {
   	}
 }/*---? is it needed-----*/
 function shoppingCartStart($scope, $location, $http, addToCartService){
-	
 	$scope.title="Shopping Cart";
 	var locPath = $location.path();
-
 	//TODO: This is a technical debt :) We are finding out the position the tenant name (enclosed in the url). need to fix this
 	var locPathIdx = locPath.indexOf('/site/');
 	var endPathIdx = locPath.indexOf('/cart/');
@@ -158,9 +191,7 @@ function shoppingCartStart($scope, $location, $http, addToCartService){
 
 	$scope.$on('messageChangeEvent', function() {
 			console.log("I am from handleIdBroadcast of shoppingCartStart---"+addToCartService.productIndex);
-		});		
-			
-
+	});		
 	// console.log($scope.totalProducts.products.length);-- doesnt print because we are making jsonp request
 														//for which the data exceutes only in function
 	$scope.totalCost=function(){
