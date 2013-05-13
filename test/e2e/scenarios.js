@@ -3,9 +3,9 @@ describe('Product Listing for Tenants', function() {
     	browser().navigateTo('../../app/index.html#/error.html');
   	});
    it('should automatically redirect to /error page when location hash/fragment is empty', function() {
-    expect(browser().location().url()).toBe("/error.html");
+    expect(browser().location().url()).toBe("/error");
    });
-   
+  
    describe('Verify whether all tenant pages land perfectly', function() {
 	   	it('should render tenant1:GSShop product listing page when user navigates to the tenant', function() {
 	   	  browser().navigateTo('#/site/gsshop/list');
@@ -23,6 +23,22 @@ describe('Product Listing for Tenants', function() {
 	   	  browser().navigateTo('#/site/mshop/list');
 	      expect(element('#mshoplogo').text()).toMatch("mshop");
 	    });
+   });
+   describe('Check for incorrect URL with incorrect tenant name and category', function(){
+   		it('Should redirect to 404 page for incorrect tenant name', function(){
+   			browser().navigateTo('#/site/gssh/list');
+   			expect(browser().location().url()).toBe("/404");
+   			expect(element('h3').text()).toBe("Select a Shop name either as gsshop/ ditto/ mshop/ mshop ");
+   			browser().navigateTo('#/site//list');
+   			expect(browser().location().url()).toBe("/404");
+   		});
+   		it('Should rediret to error page if a wrong category is selected',function(){
+   			browser().navigateTo('#/site/gsshop/list?category=Comp');
+   			expect(browser().location().url()).toBe("/error?category=Comp");
+   			browser().navigateTo('#/site/gsshop/list?category=');
+   			expect(browser().location().url()).toBe("/error?category=");
+   		})
+   		
    });
    //--- User Story: 1---
    describe('User Story 1: Get List of Products for a Category', function(){

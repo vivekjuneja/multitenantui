@@ -25,5 +25,3 @@ angular.module('productlisting', ['productFilters',  'tenantService', 'productSe
 	  })	
       .otherwise({redirectTo: '/error'});
 }]);
-
-//angular.module('app', ['ng', 'seo']);
