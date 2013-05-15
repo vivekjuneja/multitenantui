@@ -2,23 +2,13 @@
 
 /* Controllers */
 //Renders the Product Listing based on the theme selected
-/*function PhoneListThemeCtrl($scope, $routeParams, Tenant) {
-	/* Load all tenants *---/
-	$scope.tenantselected = $routeParams.tenant;
-	$scope.tenant = Tenant.get({ tenant:$routeParams.tenant});
-      //Render Tenant Name
-	dust.render("test", {name: $routeParams.tenant}, function(err, out) {
-			$scope.tenantName = out;
-	});
-  
 
-}*/
 function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location,$rootScope,$route) {
 	/* Load all tenants */
 	$scope.tenantselected = $routeParams.tenant;
 	$scope.categoryText = $routeParams["category"];
 	if($scope.tenantselected=="ditto"|| $scope.tenantselected=="gsshop") {
-		//alert($routeParams["category"]);
+	
 		if($routeParams["category"]=="Electronics" || $routeParams["category"]=="Computers")
 		{
 			$scope.category="laptop";
@@ -31,23 +21,21 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location,
 		{
 			$scope.category="Select Category!";
 		}
-		//alert($routeParams["category"]);
+		
 
 	}
 	
 	//error handling for not proper selection of categories
 	if(Object.keys($routeParams).length > 1){
 	    for( var param in $routeParams){
-	       // console.log("param----"+ param +" : "+$routeParams[param]);
 	        if(param == 'category' && $routeParams[param]=="" ){
-	            //alert("no category selected");
-	            $location.path("/error");
+	             $location.path("/error");
 	        }
 	        else if( param == 'category' &&
 	        		 $routeParams[param] != "Electronics" &&
 	        		 $routeParams[param] != "Computers" &&
 	        		 $routeParams[param] != "Mobiles" ){
-	            //alert("not selected proper cat")
+	          
 	             $location.path("/error");
 	        }
 	   	 }
@@ -64,12 +52,8 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location,
 		}
 	});
 	var tenantId = $scope.tenantselected;
-    //Render Tenant Name
-	//dust.render("test", {name: $routeParams.tenant}, function(err, out) {
-		$scope.tenantName = $routeParams.tenant;
-	//});
-	//----------var self = this;
-	//console.log("PhonelistController :  get the products from service ---"+ addToCartService.productIndex);
+   	$scope.tenantName = $routeParams.tenant;
+	
 	$scope.calladdToCart=function(productId){
 		addToCartService.prepareForIdBroadCast(productId);
 	   	$scope.addedtocart=true;
@@ -85,38 +69,7 @@ function PhoneListCtrl($scope, $routeParams, Tenant, addToCartService,$location,
 		$location.path("/site/"+$routeParams.tenant+"/cart/order");
 	}
 }
-//test resolve and routing
 
-PhoneListCtrl.resolve={
-	tenantSelectedJsonData: function( $q,$route,Tenant ,$timeout){
-		var deferred = $q.defer;
-		var shopSelected= $route.current.params.tenant;
-		//alert(shopSelected);
-		return Tenant.query({ tenant:shopSelected},function(successData){
-		 		console.log("success----"+successData);
-		 		//return successData;
-		 		$timeout(function(){
-		 		return deferred.resolve(successData);
-		 		},2000)
-		 	},function(){
-		 	//alert("Invalid tenant selected ");
-		 		//deferred.reject("No tenant found");
-		 	})
-		 	//return deferred.promise;
-	 		//deferred.resolve(dataJSON);
-		}
-}
-//ends
-/*var renderMenus = function(jsonReceived) {
-	alert("jsonreceived " + jsonReceived);
-	dust.render("menulisting",jsonReceived, function(err, out) {
-				self.menulist = out;
-				self.menusavailable = true;
-				alert(self.menulist);
-		
- 	});
-			
-}*/
 function PhoneDetailCtrl($scope, $routeParams, Tenant, addToCartService, $location) {
 	$scope.tenantselected = $routeParams.tenant;
 	$scope.tenant = Tenant.get({ tenant:$routeParams.tenant}); 
@@ -145,16 +98,6 @@ function PhoneDetailCtrl($scope, $routeParams, Tenant, addToCartService, $locati
 	
 }
 
-/*function ProductInfoCtrl($scope, $routeParams, Product) {
-	if($routeParams.productId==undefined)
-	 alert("Hola");
-	$scope.product = Product.get({product: $routeParams.productId, tenant:$routeParams.tenant}, function(product) {
-    	$scope.mainImageUrl = phone.images[0];
- 	});
-	$scope.setImage = function(imageUrl) {
-    	$scope.mainImageUrl = imageUrl;
-  	}
-}/*---? is it needed-----*/
 function shoppingCartStart($scope, $location, $http, addToCartService){
 	$scope.title="Shopping Cart";
 	var locPath = $location.path();
