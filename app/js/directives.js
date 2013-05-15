@@ -52,7 +52,7 @@ angular.module('showMobiles',[])
        			element.bind('click',function(){
 	       			//spanElement.removeClass('hideText');
 	       			//spanElement.addClass('showText');
-	       			console.log("clicked")
+	       			console.log("clicked");
 	       			productlistMobiles.attr("visibility","visible");
 	       			
 	       			

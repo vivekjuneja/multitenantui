@@ -46,23 +46,7 @@
 			}
 		}	
  		 
-	    beforeEach(inject(function($httpBackend, $rootScope, $controller, $routeParams) {
-	      httpMock = $httpBackend;
-	      $httpBackend.expectGET('data/ditto.json').respond(dittoJsonData());
-	 	  $routeParams.tenant="ditto";
-	 	
-	      scope = $rootScope.$new();
-	      ctrl = $controller(PhoneListCtrl, {
-	      			$scope: scope
-	      			});
-	     // httpMock.flush();
-	    })); 	
 	     
-	    it('should test the loading of tenant specififc json data',function(){	
-	    	expect(scope.tenant).toEqualData({});
-	    	httpMock.flush();
-	    	expect(scope.tenant).toEqualData(dittoJsonData());
-	    });
 	    
  	 });
 });
