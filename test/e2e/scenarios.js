@@ -119,10 +119,7 @@ describe('Product Listing for Tenants', function() {
  			element('.sub-menu li:first a').click();
  			expect(element('.productlist2 li .rating').text()).toMatch("Rating");
  		});
- 		it('Should not display products rating for ShopA(GSShop)', function(){
- 			browser().navigateTo('#/site/gsshop/list');
- 			expect(element('.productlist2 li .rating').text()).toMatch("Rating");
- 		});
+ 		
  	});
 });
 

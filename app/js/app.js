@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('productlisting', ['productFilters',  'tenantService', 'productService','sharedCartService', 'ui.directives', 'ui.bootstrap', 'plunker', 'ui.bootstrap.accordion','removeProducts','showText','showMobiles']).
+angular.module('productlisting', ['productFilters',  'tenantService', 'productService','sharedCartService', 'ui.directives', 'ui.bootstrap', 'plunker', 'ui.bootstrap.accordion','removeProducts','showText']).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider
       .when('/site/:tenant/list',{
